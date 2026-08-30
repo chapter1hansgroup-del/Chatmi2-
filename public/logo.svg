@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="chatwave-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A0FF" />
+      <stop offset="45%" stop-color="#0072FF" />
+      <stop offset="100%" stop-color="#00C853" />
+    </linearGradient>
+    <linearGradient id="wave-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2F7ED" />
+    </linearGradient>
+    <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0066FF" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Speech Bubble Container -->
+  <path
+    d="M 128 28 C 66 28 18 72 18 128 C 18 156 30 181 49 200 C 41 221 27 237 21 243 C 19 245 20 249 23 249 C 52 249 83 236 104 221 C 112 223 120 224 128 224 C 190 224 238 180 238 124 C 238 68 190 28 128 28 Z"
+    fill="url(#chatwave-grad)"
+    filter="url(#logo-shadow)"
+  />
+
+  <!-- Concentric Signal Waves -->
+  <!-- Small Inner Arc -->
+  <path
+    d="M 104 158 A 28 28 0 0 1 152 158"
+    stroke="url(#wave-grad)"
+    stroke-width="13"
+    stroke-linecap="round"
+  />
+  <!-- Medium Middle Arc -->
+  <path
+    d="M 86 132 A 48 48 0 0 1 170 132"
+    stroke="url(#wave-grad)"
+    stroke-width="13"
+    stroke-linecap="round"
+  />
+  <!-- Large Outer Arc -->
+  <path
+    d="M 68 106 A 68 68 0 0 1 188 106"
+    stroke="url(#wave-grad)"
+    stroke-width="13"
+    stroke-linecap="round"
+  />
+</svg>

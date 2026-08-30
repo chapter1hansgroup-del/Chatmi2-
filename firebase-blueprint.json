@@ -1,0 +1,33 @@
+{
+  "entities": {
+    "users": {
+      "title": "Users",
+      "description": "Registered user accounts with phone number and profile data",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "User unique identifier" },
+        "name": { "type": "string", "description": "Display name" },
+        "phoneNumber": { "type": "string", "description": "International formatted phone number" },
+        "avatar": { "type": "string", "description": "Profile picture URL" },
+        "status": { "type": "string", "description": "Online presence status" },
+        "statusText": { "type": "string", "description": "About / status text" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name"]
+    },
+    "messages": {
+      "title": "Messages",
+      "description": "Chat messages between contacts or in groups",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Message unique identifier" },
+        "chatId": { "type": "string", "description": "Chat room identifier" },
+        "senderId": { "type": "string", "description": "Sender user ID" },
+        "text": { "type": "string", "description": "Message content" },
+        "timestamp": { "type": "string", "description": "Creation timestamp" },
+        "status": { "type": "string", "description": "Sent/Delivered/Read status" }
+      },
+      "required": ["id", "chatId", "senderId", "text"]
+    }
+  }
+}

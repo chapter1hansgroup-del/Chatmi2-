@@ -1,0 +1,6 @@
+{
+  "name": "ChatMi",
+  "description": "Worldwide enterprise messaging application with Google Contacts & Workspace Directory integration, Real-Time Sign Language to Words & Speech AI Video Call Translation, 100% global availability across 195+ countries, Anycast multi-region edge routing, 500+ country languages & regional dialects with native scripts and RTL support, AI Mind Maps, Live Voice Orb Companion, Watch Parties, Full-screen FX, and Quantum Secret Vault.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

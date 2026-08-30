@@ -1,0 +1,263 @@
+export interface CountryLanguage {
+  code: string;
+  name: string;
+  nativeName: string;
+  flag: string;
+  region: string;
+  rtl?: boolean;
+}
+
+export interface EdgeRegion {
+  id: string;
+  name: string;
+  location: string;
+  flag: string;
+  latencyMs: number;
+}
+
+import { ALL_WORLD_LANGUAGES } from './languagesData';
+
+export const SUPPORTED_LANGUAGES: CountryLanguage[] = ALL_WORLD_LANGUAGES;
+
+
+export const GLOBAL_EDGE_REGIONS: EdgeRegion[] = [
+  { id: 'global-auto', name: 'Anycast Geo-DNS (Fastest)', location: 'Edge Nearest You', flag: '🌐', latencyMs: 14 },
+  { id: 'us-east', name: 'North America (East)', location: 'N. Virginia, USA', flag: '🇺🇸', latencyMs: 18 },
+  { id: 'us-west', name: 'North America (West)', location: 'Oregon, USA', flag: '🇺🇸', latencyMs: 24 },
+  { id: 'eu-west', name: 'Europe (Central)', location: 'Frankfurt, Germany', flag: '🇩🇪', latencyMs: 22 },
+  { id: 'eu-lon', name: 'Europe (West)', location: 'London, UK', flag: '🇬🇧', latencyMs: 19 },
+  { id: 'ap-east', name: 'Asia Pacific (Northeast)', location: 'Tokyo, Japan', flag: '🇯🇵', latencyMs: 31 },
+  { id: 'ap-southeast', name: 'Asia Pacific (Southeast)', location: 'Singapore', flag: '🇸🇬', latencyMs: 28 },
+  { id: 'ap-south', name: 'South Asia', location: 'Mumbai, India', flag: '🇮🇳', latencyMs: 34 },
+  { id: 'sa-east', name: 'South America', location: 'São Paulo, Brazil', flag: '🇧🇷', latencyMs: 42 },
+  { id: 'me-central', name: 'Middle East', location: 'Dubai, UAE', flag: '🇦🇪', latencyMs: 36 },
+  { id: 'af-south', name: 'Africa (South)', location: 'Johannesburg, South Africa', flag: '🇿🇦', latencyMs: 48 },
+  { id: 'au-east', name: 'Oceania', location: 'Sydney, Australia', flag: '🇦🇺', latencyMs: 38 },
+];
+
+export const UI_TRANSLATIONS: Record<string, Record<string, string>> = {
+  en: {
+    chats: 'Chats',
+    calls: 'Calls',
+    starred: 'Saved',
+    stories: 'Postly',
+    alpha: 'Alpha AI',
+    searchChats: 'Search chats, contacts, or messages...',
+    typeMessage: 'Type a message... (Enter to send)',
+    encrypted: 'End-to-End Encrypted • Verified Worldwide',
+    online: 'Online',
+    offline: 'Offline',
+    typing: 'typing...',
+    pinned: 'Pinned Message',
+    globalCoverage: 'Global Low-Latency Coverage',
+    settings: 'Settings & Identity',
+    translate: 'Translate',
+    commandCenter: 'Command Center',
+    voiceCall: 'Voice Call',
+    videoCall: 'Video Meeting',
+    send: 'Send',
+  },
+  es: {
+    chats: 'Chats',
+    calls: 'Llamadas',
+    starred: 'Guardados',
+    stories: 'Postly',
+    alpha: 'Alpha IA',
+    searchChats: 'Buscar chats, contactos o mensajes...',
+    typeMessage: 'Escribe un mensaje... (Enter para enviar)',
+    encrypted: 'Cifrado de extremo a extremo • Verificado',
+    online: 'En línea',
+    offline: 'Desconectado',
+    typing: 'escribiendo...',
+    pinned: 'Mensaje fijado',
+    globalCoverage: 'Cobertura global de baja latencia',
+    settings: 'Configuración e Identidad',
+    translate: 'Traducir',
+    commandCenter: 'Centro de comandos',
+    voiceCall: 'Llamada de voz',
+    videoCall: 'Videollamada',
+    send: 'Enviar',
+  },
+  fr: {
+    chats: 'Discussions',
+    calls: 'Appels',
+    starred: 'Enregistrés',
+    stories: 'Postly',
+    alpha: 'Alpha IA',
+    searchChats: 'Rechercher des discussions ou messages...',
+    typeMessage: 'Écrivez un message... (Entrée pour envoyer)',
+    encrypted: 'Chiffrement de bout en bout • Vérifié mondialement',
+    online: 'En ligne',
+    offline: 'Hors ligne',
+    typing: 'écrit...',
+    pinned: 'Message épinglé',
+    globalCoverage: 'Couverture mondiale à faible latence',
+    settings: 'Paramètres & Identité',
+    translate: 'Traduire',
+    commandCenter: 'Centre de commande',
+    voiceCall: 'Appel vocal',
+    videoCall: 'Réunion vidéo',
+    send: 'Envoyer',
+  },
+  de: {
+    chats: 'Chats',
+    calls: 'Anrufe',
+    starred: 'Gespeichert',
+    stories: 'Postly',
+    alpha: 'Alpha KI',
+    searchChats: 'Chats, Kontakte oder Nachrichten suchen...',
+    typeMessage: 'Nachricht eingeben... (Eingabe zum Senden)',
+    encrypted: 'Ende-zu-Ende verschlüsselt • Weltweit verifiziert',
+    online: 'Online',
+    offline: 'Offline',
+    typing: 'tippt...',
+    pinned: 'Angeheftete Nachricht',
+    globalCoverage: 'Weltweite Abdeckung mit minimaler Latenz',
+    settings: 'Einstellungen & Identität',
+    translate: 'Übersetzen',
+    commandCenter: 'Befehlszentrale',
+    voiceCall: 'Sprachanruf',
+    videoCall: 'Videokonferenz',
+    send: 'Senden',
+  },
+  'zh-CN': {
+    chats: '消息',
+    calls: '通话',
+    starred: '已收藏',
+    stories: 'Postly 动态',
+    alpha: 'Alpha AI 助手',
+    searchChats: '搜索聊天、联系人或消息...',
+    typeMessage: '输入消息... (按回车发送)',
+    encrypted: '端到端加密 • 全球可信',
+    online: '在线',
+    offline: '离线',
+    typing: '正在输入...',
+    pinned: '置顶消息',
+    globalCoverage: '全球低延迟边缘网络',
+    settings: '设置与身份',
+    translate: '翻译',
+    commandCenter: '指令中心',
+    voiceCall: '语音通话',
+    videoCall: '视频会议',
+    send: '发送',
+  },
+  ja: {
+    chats: 'チャット',
+    calls: '通話',
+    starred: '保存済み',
+    stories: 'Postly',
+    alpha: 'Alpha AI',
+    searchChats: 'チャット、連絡先、メッセージを検索...',
+    typeMessage: 'メッセージを入力... (Enterで送信)',
+    encrypted: 'エンドツーエンド暗号化 • 世界中どこでも安全',
+    online: 'オンライン',
+    offline: 'オフライン',
+    typing: '入力中...',
+    pinned: '固定メッセージ',
+    globalCoverage: 'グローバル低遅延エッジ配信',
+    settings: '設定とプロフィール',
+    translate: '翻訳',
+    commandCenter: 'コマンドセンター',
+    voiceCall: '音声通話',
+    videoCall: 'ビデオ会議',
+    send: '送信',
+  },
+  ar: {
+    chats: 'المحادثات',
+    calls: 'المكالمات',
+    starred: 'المحفوظات',
+    stories: 'بوستلي',
+    alpha: 'الذكاء الاصطناعي ألفا',
+    searchChats: 'ابحث في المحادثات والرسائل...',
+    typeMessage: 'اكتب رسالة... (اضغط Enter للإرسال)',
+    encrypted: 'تشفير تام من طرف إلى طرف • موثوق عالمياً',
+    online: 'متصل الآن',
+    offline: 'غير متصل',
+    typing: 'يكتب الآن...',
+    pinned: 'رسالة مثبتة',
+    globalCoverage: 'تغطية عالمية سريعة ومنخفضة الاستجابة',
+    settings: 'الإعدادات والهوية',
+    translate: 'ترجمة',
+    commandCenter: 'مركز الأوامر',
+    voiceCall: 'مكالمة صوتية',
+    videoCall: 'اجتماع فيديو',
+    send: 'إرسال',
+  },
+  hi: {
+    chats: 'चैट',
+    calls: 'कॉल',
+    starred: 'सहेजे गए',
+    stories: 'पोस्टली',
+    alpha: 'अल्फ़ा एआई',
+    searchChats: 'चैट, संपर्क या संदेश खोजें...',
+    typeMessage: 'संदेश लिखें... (भेजने के लिए एंटर दबाएं)',
+    encrypted: 'एंड-टू-एंड एन्क्रिप्टेड • दुनिया भर में सत्यापित',
+    online: 'ऑनलाइन',
+    offline: 'ऑफ़लाइन',
+    typing: 'टाइप कर रहे हैं...',
+    pinned: 'पिन किया गया संदेश',
+    globalCoverage: 'वैश्विक कम-विलंबता नेटवर्क',
+    settings: 'सेटिंग्स और पहचान',
+    translate: 'अनुवाद करें',
+    commandCenter: 'कमांड सेंटर',
+    voiceCall: 'वॉयस कॉल',
+    videoCall: 'वीडियो मीटिंग',
+    send: 'भेजें',
+  },
+  pt: {
+    chats: 'Conversas',
+    calls: 'Chamadas',
+    starred: 'Salvos',
+    stories: 'Postly',
+    alpha: 'Alpha IA',
+    searchChats: 'Pesquisar conversas, contatos ou mensagens...',
+    typeMessage: 'Digite uma mensagem... (Enter para enviar)',
+    encrypted: 'Criptografia de ponta a ponta • Verificado globalmente',
+    online: 'Online',
+    offline: 'Offline',
+    typing: 'digitando...',
+    pinned: 'Mensagem fixada',
+    globalCoverage: 'Cobertura global de baixa latência',
+    settings: 'Configurações e Perfil',
+    translate: 'Traduzir',
+    commandCenter: 'Central de Comandos',
+    voiceCall: 'Chamada de Voz',
+    videoCall: 'Reunião de Vídeo',
+    send: 'Enviar',
+  },
+  ru: {
+    chats: 'Чаты',
+    calls: 'Звонки',
+    starred: 'Избранное',
+    stories: 'Postly',
+    alpha: 'Альфа ИИ',
+    searchChats: 'Поиск чатов, контактов или сообщений...',
+    typeMessage: 'Введите сообщение... (Enter для отправки)',
+    encrypted: 'Сквозное шифрование • Проверено по всему миру',
+    online: 'В сети',
+    offline: 'Не в сети',
+    typing: 'печатает...',
+    pinned: 'Закрепленное сообщение',
+    globalCoverage: 'Глобальное покрытие с минимальной задержкой',
+    settings: 'Настройки и профиль',
+    translate: 'Перевести',
+    commandCenter: 'Командный центр',
+    voiceCall: 'Голосовой звонок',
+    videoCall: 'Видеовстреча',
+    send: 'Отправить',
+  },
+};
+
+export const getTranslation = (langCode: string, key: string, fallback?: string): string => {
+  const code = langCode.split('-')[0];
+  if (UI_TRANSLATIONS[langCode]?.[key]) {
+    return UI_TRANSLATIONS[langCode][key];
+  }
+  if (UI_TRANSLATIONS[code]?.[key]) {
+    return UI_TRANSLATIONS[code][key];
+  }
+  if (UI_TRANSLATIONS.en?.[key]) {
+    return UI_TRANSLATIONS.en[key];
+  }
+  return fallback || key;
+};
